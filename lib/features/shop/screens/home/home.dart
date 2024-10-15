@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
 
@@ -49,16 +49,19 @@ class HomeScreen extends StatelessWidget {
 
               //body
               Padding(
-                padding: EdgeInsets.all(TSizes.defaultSpace),
+                padding:const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                   children: [
 
                     // Promo Slider
-                    TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2,TImages.promoBanner3,],),
-                      SizedBox(height: TSizes.spaceBtwItems),
+                    const TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2,TImages.promoBanner3,],),
+                    const SizedBox(height: TSizes.spaceBtwItems),
+
+                    TSectionHeading(title: "Popular Products", onPressed: (){},),
+                    const SizedBox(height: TSizes.spaceBtwItems),
 
                     //Popular products
-                    TGridLayout(itemCount: 4, itemBuilder: (_, index ) => TProductCardVertical()),
+                    TGridLayout(itemCount: 4, itemBuilder: (_, index ) => const TProductCardVertical()),
                     
                   ],
                 ),

@@ -8,13 +8,14 @@ import 'package:iconsax/iconsax.dart';
 
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
-    super.key, required this.text, this.icon = Iconsax.search_normal,  this.showBackground = true,  this.showBorder = true, this.ontap,
+    super.key, required this.text, this.icon = Iconsax.search_normal,  this.showBackground = true,  this.showBorder = true, this.ontap, this.padding = const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
   });
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
   final VoidCallback? ontap;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class TSearchContainer extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+        padding: padding,
         child: Container(
           width: TDeviceUtils.getScreenHeight(context),
           padding: const EdgeInsets.all(TSizes.md),
