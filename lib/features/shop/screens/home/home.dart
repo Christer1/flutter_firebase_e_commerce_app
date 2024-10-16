@@ -10,6 +10,7 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -22,8 +23,7 @@ class HomeScreen extends StatelessWidget {
             const TPrimaryHeaderContainer(
               child: Column(
                 children: [
-
-                  //Appbar 
+                  //Appbar
                   THomeAppBar(),
                   SizedBox(height: TSizes.spaceBtwSections),
 
@@ -32,44 +32,57 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   //Headings
-                  Padding(padding: EdgeInsets.only(left: TSizes.defaultSpace),
-                  child: Column(
-                    children: [
-                      TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: TColors.white ,),
-                      SizedBox(height: TSizes.spaceBtwItems),
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TSectionHeading(
+                          title: 'Popular Categories',
+                          showActionButton: false,
+                          textColor: TColors.white,
+                        ),
+                        SizedBox(height: TSizes.spaceBtwItems),
+                        SizedBox(height: TSizes.spaceBtwSections),
 
-                      //Categories
-                      THomeCategories(),
-
-                    ],
-                  ),),
+                        //Categories
+                        THomeCategories(),
+                      ],
+                    ),
+                  ),
                 ],
               ),
+            ),
+            //body
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  // Promo Slider
+                  const TPromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3,
+                    ],
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+
+                  TSectionHeading(
+                    title: "Popular Products",
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+
+                  //Popular products
+                  TGridLayout(
+                      itemCount: 4,
+                      itemBuilder: (_, index) => const TProductCardVertical()),
+                ],
               ),
-
-              //body
-              Padding(
-                padding:const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-
-                    // Promo Slider
-                    const TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2,TImages.promoBanner3,],),
-                    const SizedBox(height: TSizes.spaceBtwItems),
-
-                    TSectionHeading(title: "Popular Products", onPressed: (){},),
-                    const SizedBox(height: TSizes.spaceBtwItems),
-
-                    //Popular products
-                    TGridLayout(itemCount: 4, itemBuilder: (_, index ) => const TProductCardVertical()),
-                    
-                  ],
-                ),
-              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-

@@ -2,12 +2,11 @@
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
-    super.key, required this.image, required this.title, this.textColor = TColors.white, this.backgroundColor = TColors.white, this.ontap,
+    super.key, required this.image, required this.title, this.textColor = TColors.white, this.backgroundColor , this.ontap,
   });
 
   final String image, title;

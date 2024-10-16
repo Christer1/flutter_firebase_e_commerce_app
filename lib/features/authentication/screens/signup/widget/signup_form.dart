@@ -23,7 +23,7 @@ class TSignUpForm extends StatelessWidget {
               Flexible(
                 child: TextFormField(
                   expands: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: TTexts.firstName,
                     prefixIcon: Icon(Iconsax.user),
                   ),
@@ -33,7 +33,7 @@ class TSignUpForm extends StatelessWidget {
               Flexible(
                 child: TextFormField(
                   expands: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: TTexts.lastName,
                     prefixIcon: Icon(Iconsax.user),
                   ),
@@ -45,7 +45,7 @@ class TSignUpForm extends StatelessWidget {
 
           //Username
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: TTexts.username,
               prefixIcon: Icon(Iconsax.user_edit),
             ),
@@ -55,7 +55,7 @@ class TSignUpForm extends StatelessWidget {
 
           //Email
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: TTexts.email,
               prefixIcon: Icon(Iconsax.direct),
             ),
@@ -64,7 +64,7 @@ class TSignUpForm extends StatelessWidget {
 
           //Phone number
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: TTexts.phoneNo,
               prefixIcon: Icon(Iconsax.call),
             ),
@@ -75,7 +75,7 @@ class TSignUpForm extends StatelessWidget {
           //Password
           TextFormField(
             obscureText: true,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               suffixIcon: Icon(Iconsax.eye_slash),
               labelText: TTexts.password,
               prefixIcon: Icon(Iconsax.user_edit),
