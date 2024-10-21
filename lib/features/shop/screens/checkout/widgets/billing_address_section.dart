@@ -15,13 +15,13 @@ class TBillingAddressSection extends StatelessWidget {
           
         },),
 
-        Text('Coding with Demartechx', style: Theme.of(context).textTheme.bodyLarge,),
+        Text('Coding with Crystal', style: Theme.of(context).textTheme.bodyLarge,),
         const SizedBox(height: TSizes.spaceBtwItems / 2,),
         Row(
           children: [
         const Icon(Icons.phone, color: Colors.grey, size: 16,),
             const SizedBox(width: TSizes.spaceBtwItems,),
-            Text('+234-809-2057959', style: Theme.of(context).textTheme.bodyMedium,)
+            Text('+234-704-2434056', style: Theme.of(context).textTheme.bodyMedium,)
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 2,),
