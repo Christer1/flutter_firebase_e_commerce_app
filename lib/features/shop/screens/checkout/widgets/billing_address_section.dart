@@ -1,6 +1,6 @@
 
-import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 class TBillingAddressSection extends StatelessWidget {
   const TBillingAddressSection({super.key});

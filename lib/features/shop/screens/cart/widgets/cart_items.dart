@@ -1,7 +1,7 @@
-import 'package:e_commerce_app/common/widgets/products/cart/add_remove_button.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/cart_item.dart';
-import 'package:e_commerce_app/common/widgets/texts/t_product_price_text.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/cart/add_remove_button.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/cart/cart_item.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/t_product_price_text.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 class TCartItems extends StatelessWidget {
   const TCartItems({

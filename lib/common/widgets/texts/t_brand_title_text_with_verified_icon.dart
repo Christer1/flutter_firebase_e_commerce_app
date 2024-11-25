@@ -1,8 +1,8 @@
 
-import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/enums.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/t_brand_title_text.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/enums.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

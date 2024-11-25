@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class TOverallProductRating extends StatelessWidget {

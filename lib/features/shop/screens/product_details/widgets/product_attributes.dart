@@ -1,11 +1,11 @@
-import 'package:e_commerce_app/common/widgets/chips/choice_chip.dart';
-import 'package:e_commerce_app/common/widgets/products/t_rounded_container.dart';
-import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
-import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
-import 'package:e_commerce_app/common/widgets/texts/t_product_price_text.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/chips/choice_chip.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/t_rounded_container.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/product_title_text.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/t_product_price_text.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 class TProductAttributes extends StatelessWidget {
   const TProductAttributes({super.key});

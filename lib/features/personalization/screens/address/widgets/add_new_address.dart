@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

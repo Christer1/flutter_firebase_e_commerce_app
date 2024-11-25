@@ -1,8 +1,8 @@
 
-import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/products/ratings/rating_indicator.dart';
-import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/overall_product_rating.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/ratings/rating_indicator.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/product_reviews/widgets/overall_product_rating.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'widgets/user_review_card.dart';
 

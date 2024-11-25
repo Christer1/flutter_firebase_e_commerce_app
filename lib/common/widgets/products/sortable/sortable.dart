@@ -1,6 +1,6 @@
-import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
-import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/layouts/grid_layout.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

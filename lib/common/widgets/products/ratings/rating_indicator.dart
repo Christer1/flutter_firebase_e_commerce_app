@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconsax/iconsax.dart';

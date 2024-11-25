@@ -1,11 +1,11 @@
-import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
-import 'package:e_commerce_app/common/widgets/products/t_rounded_container.dart';
-import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/enums.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/images/t_circular_image.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/t_rounded_container.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/enums.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 

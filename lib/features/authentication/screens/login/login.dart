@@ -1,10 +1,10 @@
-import 'package:e_commerce_app/common/styles/spacing_style.dart';
-import 'package:e_commerce_app/common/widgets/login_signup/form_divider.dart';
-import 'package:e_commerce_app/features/authentication/screens/login/widget/login_form.dart';
-import 'package:e_commerce_app/features/authentication/screens/login/widget/login_header.dart';
-import 'package:e_commerce_app/common/widgets/login_signup/social_buttons.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/constants/text_strings.dart';
+import 'package:e_commerce_app_with_firebase/common/styles/spacing_style.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/login_signup/form_divider.dart';
+import 'package:e_commerce_app_with_firebase/features/authentication/screens/login/widget/login_form.dart';
+import 'package:e_commerce_app_with_firebase/features/authentication/screens/login/widget/login_header.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/login_signup/social_buttons.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

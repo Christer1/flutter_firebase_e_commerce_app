@@ -1,134 +1,136 @@
-import 'package:e_commerce_app/features/authentication/screens/signup/verify_email.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/constants/text_strings.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app_with_firebase/features/authentication/controllers/signup/signup_controller.dart';
+import 'package:e_commerce_app_with_firebase/features/authentication/screens/signup/widget/terms_conditions_checkbox.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/text_strings.dart';
+import 'package:e_commerce_app_with_firebase/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class TSignUpForm extends StatelessWidget {
-  const TSignUpForm({
+class TSignupForm extends StatelessWidget {
+  const TSignupForm({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final controller = Get.put(SignupController());
+
     return Form(
-      child: Column(
-        children: [
-          Row(
+        key: controller.signupFormKey,
+        child: Padding(
+          padding:
+              const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
+          child: Column(
             children: [
-              Flexible(
-                child: TextFormField(
-                  expands: false,
-                  decoration: const InputDecoration(
-                    labelText: TTexts.firstName,
-                    prefixIcon: Icon(Iconsax.user),
+              //first and last name
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: controller.firstName,
+                      validator: (value) =>
+                          TValidator.validateEmptyText('First name', value),
+                      expands: false,
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.user),
+                          labelText: TTexts.firstName),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: TSizes.spaceBtwInputFields,
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      controller: controller.lastName,
+                      validator: (value) =>
+                          TValidator.validateEmptyText('Last name', value),
+                      expands: false,
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.user),
+                          labelText: TTexts.lastName),
+                    ),
+                  ),
+                ],
+              ),
+
+              //username
+              const SizedBox(
+                height: TSizes.spaceBtwInputFields,
+              ),
+              TextFormField(
+                validator: (value) =>
+                    TValidator.validateEmptyText('Username', value),
+                controller: controller.username,
+                expands: false,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Iconsax.user_edit),
+                    labelText: TTexts.username),
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwInputFields,
+              ),
+
+              //email
+              TextFormField(
+                validator: (value) => TValidator.validateEmail(value),
+                controller: controller.email,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Iconsax.direct_right),
+                    labelText: TTexts.email),
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwInputFields,
+              ),
+
+              //phone number
+              TextFormField(
+                controller: controller.phoneNumber,
+                validator: (value) => TValidator.validatePhoneNumber(value),
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Iconsax.call), labelText: TTexts.phoneNo),
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwInputFields,
+              ),
+
+              //password
+              Obx(
+                () => TextFormField(
+                  controller: controller.password,
+                  validator: (value) => TValidator.validatePassword(value),
+                  obscureText: controller.hidePassword.value,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Iconsax.password_check),
+                    labelText: TTexts.password,
+                    suffixIcon: IconButton(
+                        onPressed: () => controller.hidePassword.value =
+                            !controller.hidePassword.value,
+                        icon: Icon(controller.hidePassword.value
+                            ? Iconsax.eye_slash
+                            : Iconsax.eye)),
                   ),
                 ),
               ),
-              const SizedBox(width: TSizes.spaceBtwItems),
-              Flexible(
-                child: TextFormField(
-                  expands: false,
-                  decoration: const InputDecoration(
-                    labelText: TTexts.lastName,
-                    prefixIcon: Icon(Iconsax.user),
-                  ),
-                ),
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
               ),
-            ],
-          ),
-          const SizedBox(height: TSizes.spaceBtwInputFields),
 
-          //Username
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: TTexts.username,
-              prefixIcon: Icon(Iconsax.user_edit),
-            ),
-          ),
+              //terms and condition
+              const TTermsAndConditionCheckbox(),
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
 
-          const SizedBox(height: TSizes.spaceBtwInputFields),
-
-          //Email
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: TTexts.email,
-              prefixIcon: Icon(Iconsax.direct),
-            ),
-          ),
-          const SizedBox(height: TSizes.spaceBtwInputFields),
-
-          //Phone number
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: TTexts.phoneNo,
-              prefixIcon: Icon(Iconsax.call),
-            ),
-          ),
-
-          const SizedBox(height: TSizes.spaceBtwInputFields),
-
-          //Password
-          TextFormField(
-            obscureText: true,
-            decoration: const InputDecoration(
-              suffixIcon: Icon(Iconsax.eye_slash),
-              labelText: TTexts.password,
-              prefixIcon: Icon(Iconsax.user_edit),
-            ),
-          ),
-          const SizedBox(height: TSizes.spaceBtwSections),
-
-          //Terms&Conditions Checkbox
-          Row(
-            children: [
+              //sign up button
               SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: Checkbox(value: true, onChanged: (value) {})),
-              const SizedBox(width: TSizes.spaceBtwItems),
-              Text.rich(TextSpan(children: [
-                TextSpan(
-                    text: '${TTexts.iAgreeTo} ',
-                    style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(
-                    text: '${TTexts.privacyPolicy} ',
-                    style: Theme.of(context).textTheme.bodyMedium!.apply(
-                        color: dark ? TColors.white : TColors.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor:
-                            dark ? TColors.white : TColors.primary)),
-                TextSpan(
-                    text: '${TTexts.and} ',
-                    style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(
-                    text: TTexts.termsOfUse,
-                    style: Theme.of(context).textTheme.bodyMedium!.apply(
-                        color: dark ? TColors.white : TColors.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor:
-                            dark ? TColors.white : TColors.primary)),
-              ]))
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed: () => controller.signup(),
+                    child: const Text(TTexts.createAccount)),
+              ),
             ],
           ),
-          const SizedBox(
-            height: TSizes.spaceBtwSections,
-          ),
-
-          //Sign up button
-          SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () => Get.to(() => const VerifyEmailScreen()), child: const Text(TTexts.createAccount))),
-          const SizedBox(
-            height: TSizes.spaceBtwItems,
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }

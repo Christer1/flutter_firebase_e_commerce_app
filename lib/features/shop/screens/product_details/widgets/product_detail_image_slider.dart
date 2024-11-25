@@ -1,11 +1,11 @@
-  import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import 'package:e_commerce_app/common/widgets/icon/t_circular_icon.dart';
-import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+  import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/icon/t_circular_icon.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/images/t_rounded_image.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

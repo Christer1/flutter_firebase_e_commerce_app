@@ -1,7 +1,7 @@
 
-import 'package:e_commerce_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/devices/device_utility.dart';
+import 'package:e_commerce_app_with_firebase/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/devices/device_utility.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingSkip extends StatelessWidget {

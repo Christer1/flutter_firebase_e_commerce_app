@@ -1,4 +1,4 @@
-name: e_commerce_app
+name: e_commerce_app_with_firebase
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -47,6 +47,12 @@ dependencies:
   carousel_slider: ^5.0.0
   readmore: ^3.0.0
   flutter_rating_bar: ^4.0.1
+  firebase_core: ^3.7.0
+  lottie: ^3.1.3
+  connectivity_plus: ^5.0.1 #the updated version is problematic, use 5.0.1
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.5.0
+  google_sign_in: ^6.2.2
 
 dev_dependencies:
   flutter_test:

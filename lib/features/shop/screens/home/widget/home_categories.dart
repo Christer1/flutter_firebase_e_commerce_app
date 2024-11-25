@@ -1,7 +1,7 @@
 
-import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
-import 'package:e_commerce_app/features/shop/screens/order/sub_category/sub_categories.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/order/sub_category/sub_categories.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

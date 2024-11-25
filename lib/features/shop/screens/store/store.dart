@@ -1,15 +1,15 @@
-import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/appbar/tabbar.dart';
-import 'package:e_commerce_app/common/widgets/brand/t_brand_card.dart';
-import 'package:e_commerce_app/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
-import 'package:e_commerce_app/features/shop/screens/brand/all_brands.dart';
-import 'package:e_commerce_app/features/shop/screens/store/widget/category_tab.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/tabbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/brand/t_brand_card.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/layouts/grid_layout.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/brand/all_brands.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/store/widget/category_tab.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 class TProfileMenu extends StatelessWidget {
   const TProfileMenu({
     super.key, this.icon = Iconsax.arrow_right_34, required this.onPressed, required this.title, required this.value,

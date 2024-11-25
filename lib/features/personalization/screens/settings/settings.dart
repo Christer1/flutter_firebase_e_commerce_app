@@ -1,13 +1,14 @@
-import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:e_commerce_app/common/widgets/list-tiles/settings_menu_tile.dart';
-import 'package:e_commerce_app/common/widgets/list-tiles/user_profile_tile.dart';
-import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
-import 'package:e_commerce_app/features/personalization/screens/address/widgets/address.dart';
-import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
-import 'package:e_commerce_app/features/shop/screens/order/order.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/list-tiles/settings_menu_tile.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/list-tiles/user_profile_tile.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app_with_firebase/data/repositories/authentication/authentication_repository.dart';
+import 'package:e_commerce_app_with_firebase/features/personalization/screens/address/widgets/address.dart';
+import 'package:e_commerce_app_with_firebase/features/personalization/screens/profile/profile.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/order/order.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -67,7 +68,7 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
                   SizedBox(
                     width: double.infinity,
-                    child: OutlinedButton(onPressed: (){}, child: const Text("Logout")),
+                    child: OutlinedButton(onPressed: () => AuthenticationRepository.instance.logout(), child: const Text("Logout")),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                 ],

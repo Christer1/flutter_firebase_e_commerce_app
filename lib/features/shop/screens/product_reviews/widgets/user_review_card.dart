@@ -1,9 +1,9 @@
-import 'package:e_commerce_app/common/widgets/products/ratings/rating_indicator.dart';
-import 'package:e_commerce_app/common/widgets/products/t_rounded_container.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/ratings/rating_indicator.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/t_rounded_container.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 

@@ -1,17 +1,17 @@
 
-import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/coupon_widget.dart';
-import 'package:e_commerce_app/common/widgets/products/t_rounded_container.dart';
-import 'package:e_commerce_app/common/widgets/success_screen/success_screen.dart';
-import 'package:e_commerce_app/features/shop/screens/cart/widgets/cart_items.dart';
-import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_address_section.dart';
-import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_amount_section.dart';
-import 'package:e_commerce_app/features/shop/screens/checkout/widgets/billing_payment_section.dart';
-import 'package:e_commerce_app/navigation_menu.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/cart/coupon_widget.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/products/t_rounded_container.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/success_screen/success_screen.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/cart/widgets/cart_items.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/checkout/widgets/billing_address_section.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/checkout/widgets/billing_amount_section.dart';
+import 'package:e_commerce_app_with_firebase/features/shop/screens/checkout/widgets/billing_payment_section.dart';
+import 'package:e_commerce_app_with_firebase/navigation_menu.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/colors.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:e_commerce_app_with_firebase/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
