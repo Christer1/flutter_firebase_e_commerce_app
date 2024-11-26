@@ -1,15 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
- import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app_with_firebase/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app_with_firebase/common/widgets/images/t_circular_image.dart';
 import 'package:e_commerce_app_with_firebase/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app_with_firebase/features/personalization/controllers/user_controller.dart';
+import 'package:e_commerce_app_with_firebase/features/personalization/screens/profile/widget/change_name.dart';
 import 'package:e_commerce_app_with_firebase/features/personalization/screens/profile/widget/profile_menu.dart';
 import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
-import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';class ProfileScreen extends StatelessWidget {
+import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
@@ -52,14 +58,14 @@ import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';class P
               ),
 
               TProfileMenu(
-                onPressed: () {},
+                onPressed: ()=> Get.off(()=>const ChangeName()) ,
                 title: 'Name',
-                value: 'Olawale Yussuph',
+                value: controller.user.value.fullName,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'Username',
-                value: 'Crystal',
+                value: controller.user.value.username,
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
@@ -75,18 +81,18 @@ import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';class P
               TProfileMenu(
                 onPressed: () {},
                 title: 'User ID',
-                value: '80123',
+                value: controller.user.value.id,
                 icon: Iconsax.copy,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'E-mail',
-                value: 'yussupholawale2017@gmail.com',
+                value: controller.user.value.email,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'Phone Number',
-                value: '+234 704 24240 56',
+                value: controller.user.value.phoneNumber,
               ),
               TProfileMenu(
                 onPressed: () {},
@@ -96,7 +102,7 @@ import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';class P
               TProfileMenu(
                 onPressed: () {},
                 title: 'Date of Birth',
-                value: '26 Dec., 1999',
+                value: '29 Oct, 1995',
               ),
 
               const Divider(),
@@ -105,7 +111,7 @@ import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';class P
               ),
 
               TextButton(
-                  onPressed: () {},
+                  onPressed: ()=> controller.deleteAccountWarningPopup(),
                   child: const Text(
                     'Close Account',
                     style: TextStyle(color: Colors.red),

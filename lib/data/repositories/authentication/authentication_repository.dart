@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_with_firebase/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app_with_firebase/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app_with_firebase/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:e_commerce_app_with_firebase/features/authentication/screens/signup/verify_email.dart';
@@ -80,28 +81,28 @@ class AuthenticationRepository extends GetxController {
 
   // Re-authenticate user
 
-  // Future<void> reAutheticateEmailAndPassword(
-  //     String email, String password) async {
-  //   try {
-  //     //create a credential
-  //     AuthCredential credential =
-  //         EmailAuthProvider.credential(email: email, password: password);
+  Future<void> reAutheticateEmailAndPassword(
+      String email, String password) async {
+    try {
+      //create a credential
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
 
-  //     //Re authenticate
-  //     await _auth.currentUser!.reauthenticateWithCredential(credential);
-  //   } on FirebaseAuthException catch (e) {
-  //     //throw 'Something went wrong. Please try again ${e.code}';
-  //     throw TFirebaseAuthException(e.code).message;
-  //   } on FirebaseException catch (e) {
-  //     throw TFirebaseException(e.code).message;
-  //   } on FormatException catch (_) {
-  //     throw const TFormatException();
-  //   } on PlatformException catch (e) {
-  //     throw TPlatformException(e.code).message;
-  //   } catch (e) {
-  //     throw 'Something went wrong. Please try again';
-  //   }
-  // }
+      //Re authenticate
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      //throw 'Something went wrong. Please try again ${e.code}';
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   /// [Email authentication] - Register
 
@@ -147,27 +148,27 @@ class AuthenticationRepository extends GetxController {
   }
 
   //forgot password
-  // Future<void> sendPasswordResetEmail(String email) async {
-  //   try {
-  //     await _auth.sendPasswordResetEmail(email: email);
-  //   } on FirebaseAuthException catch (e) {
-  //     //throw 'Something went wrong. Please try again ${e.code}';
-  //     throw TFirebaseAuthException(e.code).message;
-  //   } on FirebaseException catch (e) {
-  //     throw TFirebaseException(e.code).message;
-  //   } on FormatException catch (_) {
-  //     throw const TFormatException();
-  //   } on PlatformException catch (e) {
-  //     throw TPlatformException(e.code).message;
-  //   } catch (e) {
-  //     throw 'Something went wrong. Please try again';
-  //   }
-  // }
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      //throw 'Something went wrong. Please try again ${e.code}';
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   ///GOOGLE signin
   Future<UserCredential> signInWithGoolgle() async {
     try {
-      //Trigger the authentication flow
+      // Trigger the authentication flow
       final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
 
       //Obtain the auth details from the request
@@ -180,6 +181,7 @@ class AuthenticationRepository extends GetxController {
 
       // Once signed in, return the UserCredential
       return await _auth.signInWithCredential(credentials);
+
     } on FirebaseAuthException catch (e) {
       //throw 'Something went wrong. Please try again ${e.code}';
       throw TFirebaseAuthException(e.code).message;
@@ -215,24 +217,24 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  ///delete user - remove user auth and firestore account
-  // Future<void> deleteAccount() async {
-  //   try {
-  //     final repo = Get.put(UserRepository());
+  // delete user - remove user auth and firestore account
+  Future<void> deleteAccount() async {
+    try {
+      final repo = Get.put(UserRepository());
 
-  //     await repo.removeUserRecord(_auth.currentUser!.uid);
-  //     await _auth.currentUser?.delete();
-  //   } on FirebaseAuthException catch (e) {
-  //     //throw 'Something went wrong. Please try again ${e.code}';
-  //     throw TFirebaseAuthException(e.code).message;
-  //   } on FirebaseException catch (e) {
-  //     throw TFirebaseException(e.code).message;
-  //   } on FormatException catch (_) {
-  //     throw const TFormatException();
-  //   } on PlatformException catch (e) {
-  //     throw TPlatformException(e.code).message;
-  //   } catch (e) {
-  //     throw 'Something went wrong. Please try again';
-  //   }
-  // }
+      await repo.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      //throw 'Something went wrong. Please try again ${e.code}';
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }

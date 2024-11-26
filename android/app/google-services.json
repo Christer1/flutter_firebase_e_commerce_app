@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:132744063764:android:da004b0be844dfb3d27001",
         "android_client_info": {
-          "package_name": "com.example.e_commerce_app_with_firebase"
+          "package_name": "com.example.e_commerce_app"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "132744063764-rgv01it8fo1no5iic4jh2vdnvbodq7fk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.e_commerce_app_with_firebase",
+            "package_name": "com.example.e_commerce_app",
             "certificate_hash": "16bc22fd2203313bbe9290e9103fae9f314f9bd6"
           }
         },

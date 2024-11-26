@@ -1,4 +1,5 @@
 import 'package:e_commerce_app_with_firebase/features/authentication/controllers/login/login_controller.dart';
+import 'package:e_commerce_app_with_firebase/features/authentication/screens/password_configuration.dart/forgot_password.dart';
 import 'package:e_commerce_app_with_firebase/features/authentication/screens/signup/signup.dart';
 import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:e_commerce_app_with_firebase/utils/constants/text_strings.dart';
@@ -68,8 +69,7 @@ class TLoginForm extends StatelessWidget {
     
               //forgot password
               TextButton(
-                  // onPressed: () => Get.to(()=> const ForgetPassword()),
-                  onPressed: () => {},
+                  onPressed: () => Get.to(()=> const ForgotPassword()),
                   child: const Text(TTexts.forgetPassword))
             ],
           ),

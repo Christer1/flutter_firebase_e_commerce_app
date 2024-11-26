@@ -83,7 +83,7 @@ class LoginController extends GetxController {
 
 
   // Google sign in
-  Future<void> googleSignIn() async {
+  Future<void>  googleSignIn() async {
     try{
       TFullScreenLoader.openLoadingDialog('Login you in...', TImages.docerAnimation);
 

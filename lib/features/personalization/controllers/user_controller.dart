@@ -2,6 +2,7 @@ import 'package:e_commerce_app_with_firebase/data/repositories/authentication/au
 import 'package:e_commerce_app_with_firebase/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app_with_firebase/features/authentication/models/user_model.dart';
 import 'package:e_commerce_app_with_firebase/features/authentication/screens/login/login.dart';
+import 'package:e_commerce_app_with_firebase/features/personalization/screens/profile/widget/re_authenticate_user_login_form.dart';
 import 'package:e_commerce_app_with_firebase/utils/constants/image_strings.dart';
 import 'package:e_commerce_app_with_firebase/utils/constants/sizes.dart';
 import 'package:e_commerce_app_with_firebase/utils/network/network_manager.dart';
@@ -24,26 +25,26 @@ class UserController extends GetxController {
   final verifyPassword = TextEditingController();
   GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
 
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  //   fetchUserRecord();
-  // }
+  @override
+  void onInit() {
+    super.onInit();
+    fetchUserRecord();
+  }
 
-  //Fatch user record
-  // Future<void> fetchUserRecord() async {
-  //   try {
-  //     profileLoading.value = true;
-  //     final user = await userRepository.fetchUserDetails();
-  //     this.user(user);
-  //   } catch (e) {
-  //     user(UserModel.empty());
-  //   } finally {
-  //     profileLoading.value = false;
-  //   }
-  // }
+  // Fatch user record
+  Future<void> fetchUserRecord() async {
+    try {
+      profileLoading.value = true;
+      final user = await userRepository.fetchUserDetails();
+      this.user(user);
+    } catch (e) {
+      user(UserModel.empty());
+    } finally {
+      profileLoading.value = false;
+    }
+  }
 
-  /// save user record from any registeration provider
+  //  save user record from any registeration provider
 
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
@@ -77,109 +78,109 @@ class UserController extends GetxController {
     }
   }
 
-  // //delete account warning
-  // void deleteAccountWarningPopup() async {
-  //   Get.defaultDialog(
-  //       contentPadding: const EdgeInsets.all(TSizes.md),
-  //       title: 'Delete Account',
-  //       middleText:
-  //           'Are you sure you want to delete your account permanently? This action is not reversible and all of your data will be removed permanently.',
-  //       confirm: ElevatedButton(
-  //           onPressed: () async => deleteUserAccount(),
-  //           style: ElevatedButton.styleFrom(
-  //               backgroundColor: Colors.red,
-  //               side: const BorderSide(color: Colors.red)),
-  //           child: const Padding(
-  //             padding: EdgeInsets.symmetric(horizontal: TSizes.lg),
-  //             child: Text('Delete'),
-  //           )),
-  //       cancel: OutlinedButton(
-  //           onPressed: Navigator.of(Get.overlayContext!).pop,
-  //           child: const Text('Cancel')));
-  // }
+  //delete account warning
+  void deleteAccountWarningPopup() async {
+    Get.defaultDialog(
+        contentPadding: const EdgeInsets.all(TSizes.md),
+        title: 'Delete Account',
+        middleText:
+            'Are you sure you want to delete your account permanently? This action is not reversible and all of your data will be removed permanently.',
+        confirm: ElevatedButton(
+            onPressed: () async => deleteUserAccount(),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                side: const BorderSide(color: Colors.red)),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: TSizes.lg),
+              child: Text('Delete'),
+            )),
+        cancel: OutlinedButton(
+            onPressed: Navigator.of(Get.overlayContext!).pop,
+            child: const Text('Cancel')));
+  }
 
-// //delete user account
-//   void deleteUserAccount() async {
-//     try {
-//       //start loading
-//       TFullScreenLoader.openLoadingDialog(
-//           'Processing...', TImages.docerAnimation);
+//delete user account
+  void deleteUserAccount() async {
+    try {
+      //start loading
+      TFullScreenLoader.openLoadingDialog(
+          'Processing...', TImages.docerAnimation);
 
-//       //check internet connectivity
-//       final isConnected = await NetworkManager.instance.isConnected();
-//       if (!isConnected){
-//       //Remove Loader
-//       TFullScreenLoader.stopLoading();
-//       return;
-//       }
+      //check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected){
+      //Remove Loader
+      TFullScreenLoader.stopLoading();
+      return;
+      }
 
-//       //First re-authenticate user
-//       final auth = AuthenticationRepository.instance;
-//       final provider =
-//           auth.authUser!.providerData.map((e) => e.providerId).first;
-//       if (provider.isNotEmpty) {
+      //First re-authenticate user
+      final auth = AuthenticationRepository.instance;
+      final provider =
+          auth.authUser!.providerData.map((e) => e.providerId).first;
+      if (provider.isNotEmpty) {
 
-//         //Re Verify Email
-//         if (provider == 'google.com') {
-//           await auth.signInWithGoolgle();
-//           await auth.deleteAccount();
+        //Re Verify Email
+        if (provider == 'google.com') {
+          await auth.signInWithGoolgle();
+          await auth.deleteAccount();
 
-//           TFullScreenLoader.stopLoading();
-//           Get.offAll(() => const LoginScreen());
-//         } else if (provider == 'password') {
-//           TFullScreenLoader.stopLoading();
-//           Get.offAll(() => const ReAuthLoginForm());
-//         }
-//       }
-//     } catch (e) {
-//       TFullScreenLoader.stopLoading();
-//       TLoaders.warningSnackBar(
-//         title: 'Data not saved',
-//         message: e.toString(),
-//       );
-//     }
-//   }
+          TFullScreenLoader.stopLoading();
+          Get.offAll(() => const LoginScreen());
+        } else if (provider == 'password') {
+          TFullScreenLoader.stopLoading();
+          Get.offAll(() => const ReAuthLoginForm());
+        }
+      }
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.warningSnackBar(
+        title: 'Data not saved',
+        message: e.toString(),
+      );
+    }
+  }
+ 
+  void reAutheticateEmailAndPasswordUser() async {
 
-  // void reAutheticateEmailAndPasswordUser() async {
-
-  //   try{
-  //   //start loading
-  //     TFullScreenLoader.openLoadingDialog(
-  //         'Processing...', TImages.docerAnimation);
+    try{
+    //start loading
+      TFullScreenLoader.openLoadingDialog(
+          'Processing...', TImages.docerAnimation);
 
 
-  //   //check internet connectivity
-  //     final isConnected = await NetworkManager.instance.isConnected();
-  //     if (!isConnected){
-  //     //Remove Loader
-  //     TFullScreenLoader.stopLoading();
-  //     return;
-  //     }
+    //check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected){
+      //Remove Loader
+      TFullScreenLoader.stopLoading();
+      return;
+      }
 
-  //     //form validation
-  //     if (!reAuthFormKey.currentState!.validate()){
-  //       //Remove Loader
-  //     TFullScreenLoader.stopLoading();
-  //     return;
-  //     }
+      //form validation
+      if (!reAuthFormKey.currentState!.validate()){
+        //Remove Loader
+      TFullScreenLoader.stopLoading();
+      return;
+      }
 
-  //    await AuthenticationRepository.instance.reAutheticateEmailAndPassword(
-  //         verifyEmail.text.trim(), verifyPassword.text.trim());
+     await AuthenticationRepository.instance.reAutheticateEmailAndPassword(
+          verifyEmail.text.trim(), verifyPassword.text.trim());
 
-  //     await AuthenticationRepository.instance.deleteAccount();
+      await AuthenticationRepository.instance.deleteAccount();
 
-  //     TFullScreenLoader.stopLoading();
-  //     Get.offAll(()=> LoginScreen());
+      TFullScreenLoader.stopLoading();
+      Get.offAll(()=> LoginScreen());
 
-  //   } catch (e) {
-  //     TFullScreenLoader.stopLoading();
-  //     TLoaders.warningSnackBar(
-  //       title: 'Oh Snap!',
-  //       message: e.toString(),
-  //     );
-  //   }
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.warningSnackBar(
+        title: 'Oh Snap!',
+        message: e.toString(),
+      );
+    }
 
       
 
-  // }
+  }
 }
